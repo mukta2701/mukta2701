@@ -6,7 +6,7 @@
 
 <br>
 
-### ***As a detail-oriented Full-Stack Software Developer with experience in Front-end Development and strong knowledge in Backend Development, I am passionate about enhancing my creativity through sketching and website design.***
+### ***I am a Cyber-Security and Artificial Intelligence Master's candidate from the University of Sheffield with a background in Computer Application from Amity University, Kolkata. I have experience in front-end web development, financial programming using Python, and proficiency in languages including C++, Java, and Isabelle. My goal is to transition into a role as a Cyber Security Analyst, leveraging my technical expertise to develop and implement robust security frameworks.***
 
 ### ***My goal is to contribute my skills and creativity to Open Source projects and make a positive impact on society.***
 
