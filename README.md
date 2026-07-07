@@ -4,7 +4,7 @@
 
 ## 👩‍💻 **I'm Mukta Choudhury**
 
-### *Master’s Candidate in Cyber Security & Artificial Intelligence | Front-end Developer | Cyber Enthusiast*
+### *Postgraduate Candidate in Cyber Security & Artificial Intelligence | AI Security Engineer | GRC Analyst*
 
 ---
 
