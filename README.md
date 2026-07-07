@@ -8,7 +8,7 @@
 
 ---
 
-I am currently pursuing my Master’s in **Cyber-Security and Artificial Intelligence** at the **University of Sheffield**, after completing my Bachelor’s in **Computer Application** from **Amity University, Kolkata**.
+I am currently pursuing my Postgraduate in **Cyber-Security and Artificial Intelligence** at the **University of Sheffield**, after completing my Bachelor’s in **Computer Application** from **Amity University, Kolkata**.
 
 With a background in **front-end web development**, **financial programming** using **Python**, and proficiency in languages such as **C++**, **Java**, and **Isabelle**, my goal is to transition into a role as a **Cyber Security Analyst**. I aim to leverage my technical expertise to develop and implement robust security frameworks, while contributing to **Open Source projects** to make a positive impact on society.
 
