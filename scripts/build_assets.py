@@ -137,40 +137,14 @@ def banner(small):
             '</g>', pills]
     if small:
         body += [txt(pad, 108, "Mukta Choudhury", 38, 800),
-                 txt(pad, 142, "Privacy-by-design tooling, audit", 15, 500, op=.95),
-                 txt(pad, 162, "evidence and threat intelligence.", 15, 500, op=.95),
+                 txt(pad, 142, "Securing AI systems and turning", 15, 500, op=.95),
+                 txt(pad, 162, "controls into audit evidence.", 15, 500, op=.95),
                  shield(w - 58, 112, 0.62)]
     else:
         body += [txt(pad, 135, "Mukta Choudhury", 60, 800),
-                 txt(pad, 172, "Privacy-by-design tooling, audit evidence and threat intelligence.", 18, 500, op=.95),
+                 txt(pad, 172, "Securing AI systems and turning controls into audit evidence.", 18, 500, op=.95),
                  shield(w - 100, 120, 1.05)]
     return svg(w, h, "".join(body), "Mukta Choudhury: AI security, application security and GRC", "hero")
-
-
-# ------------------------------------------------------------------- stats
-STATS = [("381", "labelled benchmark cases", "violet"), ("100%", "near-miss precision", "teal"),
-         ("460+", "automated tests in CI", "sunset"), ("7", "threat feeds + NVD", "ocean")]
-
-
-def stats(small):
-    w, gap = (480, 12) if small else (880, 12)
-    cols = 2 if small else 4
-    th = 96 if small else 108
-    tw = (w - gap * (cols - 1)) / cols
-    rows = (len(STATS) + cols - 1) // cols
-    h = rows * th + (rows - 1) * gap
-    parts = []
-    for i, (v, label, g) in enumerate(STATS):
-        x, y = (i % cols) * (tw + gap), (i // cols) * (th + gap)
-        parts.append(f'<g clip-path="url(#c{i})"><rect x="{x:.1f}" y="{y}" width="{tw:.1f}" height="{th}" rx="14" fill="url(#g-{g})"/>'
-                     f'<circle cx="{x + tw - 18:.1f}" cy="{y + 14}" r="56" fill="#fff" fill-opacity=".14"/>'
-                     f'<circle cx="{x + tw - 70:.1f}" cy="{y + th}" r="34" fill="#fff" fill-opacity=".1"/></g>'
-                     + txt(x + 20, y + th * 0.56, v, 38 if not small else 34, 800)
-                     + txt(x + 20, y + th * 0.84, label, 13 if not small else 12.5, 500, op=.92))
-        clip = f'<clipPath id="c{i}"><rect x="{x:.1f}" y="{y}" width="{tw:.1f}" height="{th}" rx="14"/></clipPath>'
-        parts.insert(0, clip)
-    return svg(w, h, "".join(parts), "Metrics: 381 labelled benchmark cases, 100% near-miss precision, 460 plus CI tests, 7 threat feeds plus NVD",
-               *{g for _, _, g in STATS})
 
 
 # --------------------------------------------------------------- what I do
@@ -189,9 +163,9 @@ def icon_radar(cx, cy):
             f'<path d="M0 0 L11 -9" stroke-linecap="round"/><circle r="2" fill="#fff"/></g>')
 
 
-WHAT = [("Application security", "Pre-commit checks that stop personal data and secrets reaching logs, AI prompts and third parties.", "violet", icon_shield),
-        ("Governance & compliance", "Control mapping, risk assessment and audit evidence across ISO 27001, SOC 2 and AWS.", "ocean", icon_doc),
-        ("Threat intelligence", "Vulnerabilities prioritised by exploitability (CVSS, EPSS, CISA KEV), not headline severity.", "sunset", icon_radar)]
+WHAT = [("AI & application security", "Assessing risks in AI-enabled applications and APIs.", "violet", icon_shield),
+        ("Governance & compliance", "Reviewing AWS controls and tracking remediation and audit evidence with engineering teams.", "ocean", icon_doc),
+        ("Threat modelling", "Structured threat modelling with STRIDE and OWASP.", "sunset", icon_radar)]
 
 
 def whatido(small):
@@ -219,117 +193,7 @@ def whatido(small):
                          + txt(x + 22, 96, title, 17, 700))
             for j, ln in enumerate(wrap(desc, int((tw - 44) / (13 * CW)))):
                 parts.append(txt(x + 22, 120 + j * 19, ln, 13, 500, op=.93))
-    return svg(w, h, "".join(parts), "What I do: application security, governance and compliance, threat intelligence", *{g for _, _, g, _ in WHAT})
-
-
-# ------------------------------------------------------------------- cards
-def deco_shield(cx, cy, s):
-    return (f'<g transform="translate({cx} {cy}) scale({s})" opacity=".22"><path d="M0 -60 L50 -40 V5 C50 40 25 62 0 75 C-25 62 -50 40 -50 5 V-40 Z" fill="none" stroke="#fff" stroke-width="5"/>'
-            f'<path d="M-22 4 L-7 20 L26 -16" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>')
-
-
-def deco_radar(cx, cy, s):
-    return (f'<g transform="translate({cx} {cy}) scale({s})" opacity=".26" fill="none" stroke="#fff" stroke-width="3"><circle r="22"/><circle r="44"/><circle r="66"/>'
-            f'<path d="M-66 0 H66 M0 -66 V66" stroke-width="1.5"/><path d="M0 0 L46 -46 A66 66 0 0 1 66 0 Z" fill="#fff" fill-opacity=".35" stroke="none" class="spin"/></g>')
-
-
-def deco_pulse(cx, cy, s):
-    return (f'<g transform="translate({cx} {cy}) scale({s})" opacity=".3" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">'
-            f'<circle r="62" stroke-width="3"/><path d="M-50 4 H-22 L-12 -26 L2 36 L14 -12 L22 4 H50"/></g>')
-
-
-CARDS = {
-    "card-privacy": dict(g="violet", deco=deco_shield, tag="APPSEC · PRIVACY", title="privacy-review-agent",
-                         desc="Offline pre-commit and CI check that stops personal data and secrets reaching logs, AI prompts, analytics and third-party services.",
-                         stats=[("381", "benchmark cases"), ("100%", "near-miss precision"), ("460+", "CI tests")],
-                         chips=["Python", "Semgrep", "GDPR"], url="https://github.com/mukta2701/privacy-review-agent",
-                         label="privacy-review-agent: offline privacy check for code. 381 benchmark cases, 100% near-miss precision, 460 plus CI tests."),
-    "card-cybertrend": dict(g="ocean", deco=deco_radar, tag="THREAT INTELLIGENCE", title="cybertrend-intelligence",
-                            desc="Daily digest of the vulnerabilities that matter, ranked by CVSS, EPSS and CISA KEV instead of headline severity.",
-                            stats=[("7", "feeds + NVD"), ("≥ 90", "score sends an instant alert")],
-                            chips=["Python", "PostgreSQL", "NVD API", "Docker"], url="",
-                            label="cybertrend-intelligence: daily threat-intelligence digest from 7 feeds plus NVD, ranked by exploitability."),
-    "card-rfid": dict(g="amber", deco=deco_pulse, tag="THREAT MODELLING", title="rfid-threat-modelling-imd",
-                      desc="Threat model for RFID-based implantable medical devices, built with STRIDE and OWASP.",
-                      stats=[], chips=["STRIDE", "OWASP", "Medical devices"], url="",
-                      label="rfid-threat-modelling-imd: STRIDE and OWASP threat model for RFID implantable medical devices."),
-}
-
-
-def card(small, g, deco, tag, title, desc, stats_, chips, label, url=""):
-    w = 480 if small else 880
-    pad = 22 if small else 32
-    textw = w - 2 * pad if small else 600
-    fs = 13 if small else 14.5
-    parts = []
-    tw_, tdraw = pill(tag, 11, True)
-    parts.append(tdraw(pad, pad + 14))
-    y = pad + 14 + 38
-    parts.append(txt(pad, y, title, 25 if small else 29, 800))
-    y += 14 + fs
-    for ln in wrap(desc, int(textw / (fs * CW))):
-        parts.append(txt(pad, y, ln, fs, 500, op=.95))
-        y += fs * 1.55
-    y += 10
-    if stats_:
-        items = []
-        for v, lab in stats_:
-            width = len(v) * 16 + len(lab) * 6.6 + 36
-            items.append((width, lambda x, yy, v=v, lab=lab: txt(x, yy, v, 22, 800) + txt(x + len(v) * 16 + 10, yy, lab, 12.5, 500, op=.9)))
-        s, y = flow(items, pad, y + 14, textw, 30)
-        parts.append(s)
-        y -= 2
-    s, y = flow([pill(c, 12) for c in chips], pad, y + 14, textw, 30)
-    parts.append(s)
-    h = y - 4 + pad * 0.4
-    dx = w - 120 if not small else w - 62
-    dec = deco(dx, h / 2 if not small else 74, 1.2 if not small else .62)
-    body = (f'<g clip-path="url(#c)"><rect width="{w}" height="{h:.0f}" fill="url(#g-{g})"/><circle cx="{w - 30}" cy="0" r="120" fill="#fff" fill-opacity=".1"/>'
-            f'<circle cx="{w * 0.55:.0f}" cy="{h:.0f}" r="70" fill="#fff" fill-opacity=".07"/></g>' + dec + "".join(parts)
-            + txt(w - pad, pad + 14, "↗", 20, 700, anchor="end", op=.9))
-    return svg(w, h, body, label, g)
-
-
-# ---------------------------------------------------------------- pipeline
-def node(x, y, w, h, n, title, sub, g, dashed=False):
-    return (f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h}" rx="14" fill="url(#g-{g})"' + (' stroke="#fff" stroke-opacity=".7" stroke-dasharray="5 4"' if dashed else "") + '/>'
-            f'<circle cx="{x + 24:.1f}" cy="{y + h / 2:.1f}" r="14" fill="#fff" fill-opacity=".25"/>' + txt(x + 24, y + h / 2 + 5, str(n), 14, 800, anchor="middle")
-            + txt(x + 48, y + h / 2 - 3, title, 15, 700) + txt(x + 48, y + h / 2 + 16, sub, 12, 500, op=.92))
-
-
-def pipeline(small):
-    steps = [("Collect", "7 feeds + NVD", "ocean"), ("Score", "CVSS · EPSS · KEV", "teal"),
-             ("Summarise", "8 structured fields", "amber"), ("Digest", "by severity", "violet")]
-    parts = []
-    if not small:
-        w, h, nw, nh, y0 = 880, 214, 184, 64, 30
-        gap = (w - 40 - 4 * nw) / 3
-        xs = [20 + i * (nw + gap) for i in range(4)]
-        parts.append(f'<rect width="{w}" height="{h}" rx="16" fill="{NAVY}"/>')
-        for i, ((t, s, g), x) in enumerate(zip(steps, xs)):
-            parts.append(node(x, y0, nw, nh, i + 1, t, s, g))
-        for i in range(3):
-            xa, xb = xs[i] + nw + 5, xs[i + 1] - 5
-            parts.append(f'<path class="dash" d="M{xa:.1f} {y0 + nh / 2} H{xb - 6:.1f}" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" fill="none"/>'
-                         f'<path d="M{xb - 8:.1f} {y0 + nh / 2 - 6} L{xb:.1f} {y0 + nh / 2} L{xb - 8:.1f} {y0 + nh / 2 + 6}" stroke="#fff" stroke-opacity=".85" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
-        ay = y0 + nh + 44
-        parts.append(f'<path class="dash" d="M{xs[1] + nw / 2:.1f} {y0 + nh + 4} V{ay - 4}" stroke="#F87171" stroke-width="2.5" fill="none"/>')
-        parts.append(node(xs[1], ay, nw, 56, "!", "Alert now", "score ≥ 90", "amber", True))
-    else:
-        w, nw, nh, gap, x = 480, 290, 62, 22, 18
-        h = 36 + 4 * nh + 3 * gap
-        parts.append(f'<rect width="{w}" height="{h}" rx="16" fill="{NAVY}"/>')
-        for i, (t, s, g) in enumerate(steps):
-            y = 18 + i * (nh + gap)
-            parts.append(node(x, y, nw, nh, i + 1, t, s, g))
-            if i < 3:
-                parts.append(f'<path class="dash" d="M{x + nw / 2} {y + nh + 2} V{y + nh + gap - 2}" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" fill="none"/>')
-        sy, ax = 18 + (nh + gap), x + nw + 20
-        parts.append(f'<path class="dash" d="M{x + nw + 2} {sy + nh / 2} H{ax - 2}" stroke="#F87171" stroke-width="2.5" fill="none"/>')
-        parts.append(f'<rect x="{ax}" y="{sy}" width="{w - ax - 14}" height="{nh}" rx="14" fill="url(#g-amber)" stroke="#fff" stroke-opacity=".7" stroke-dasharray="5 4"/>'
-                     + txt(ax + (w - ax - 14) / 2, sy + 28, "Alert", 14, 700, anchor="middle") + txt(ax + (w - ax - 14) / 2, sy + 47, "score ≥ 90", 11.5, 500, anchor="middle", op=.92))
-    return svg(w, h, "".join(parts), "Pipeline: collect from 7 feeds and NVD, score by CVSS, EPSS and KEV, summarise, then send a digest by severity. Scores of 90 or more send an immediate alert.",
-               "ocean", "teal", "amber", "violet")
+    return svg(w, h, "".join(parts), "What I do: AI and application security, governance and compliance, threat modelling", *{g for _, _, g, _ in WHAT})
 
 
 # -------------------------------------------------------------- frameworks
@@ -367,6 +231,43 @@ def frameworks(small):
                *{g for _, _, g in ROWS})
 
 
+def deco_shield(cx, cy, s):
+    return (f'<g transform="translate({cx} {cy}) scale({s})" opacity=".26"><path d="M0 -60 L50 -40 V5 C50 40 25 62 0 75 C-25 62 -50 40 -50 5 V-40 Z" fill="none" stroke="#fff" stroke-width="5"/>'
+            f'<path d="M-22 4 L-7 20 L26 -16" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>')
+
+
+# -------------------------------------------------------------- highlights
+def deco_cap(cx, cy, s):
+    return (f'<g transform="translate({cx} {cy}) scale({s})" opacity=".28" fill="#fff"><path d="M-62 -8 L0 -40 L62 -8 L0 24 Z"/>'
+            f'<path d="M-36 8 V34 C-16 48 16 48 36 34 V8 L0 26 Z"/><rect x="58" y="-8" width="4" height="40" rx="2"/></g>')
+
+
+def tile(x, y, w, h, g, tag, title, sub, desc, deco, tsize):
+    pw, pdraw = pill(tag, 11, True)
+    parts = [f'<clipPath id="t{g}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="16"/></clipPath>'
+             f'<g clip-path="url(#t{g})"><rect x="{x}" y="{y}" width="{w}" height="{h}" fill="url(#g-{g})"/>'
+             f'<circle cx="{x + w - 20}" cy="{y}" r="110" fill="#fff" fill-opacity=".11"/><circle cx="{x + w * 0.4:.0f}" cy="{y + h}" r="60" fill="#fff" fill-opacity=".07"/></g>',
+             deco, pdraw(x + 26, y + 40), txt(x + 26, y + 84, title, tsize, 800), txt(x + 26, y + 84 + tsize * 1.2, sub, 16, 600, op=.95)]
+    yy = y + 84 + tsize * 1.2 + 28
+    for ln in wrap(desc, int((w - 52) / (13 * CW))):
+        parts.append(txt(x + 26, yy, ln, 13, 500, op=.93))
+        yy += 19
+    return "".join(parts)
+
+
+def highlights(small):
+    if small:
+        w, h1, h2, gap = 480, 168, 168, 12
+        h = h1 + h2 + gap
+        body = (tile(0, 0, w, h1, "violet", "EDUCATION", "MSc Cyber Security & AI", "University of Sheffield", "Awarded with Merit.", deco_cap(w - 70, 84, 1.0), 24)
+                + tile(0, h1 + gap, w, h2, "ocean", "CURRENT ROLE", "AI Security & Compliance", "AdTecher", "Risk assessment, AWS controls and audit evidence.", deco_shield(w - 62, h1 + gap + 84, .9), 22))
+    else:
+        w, h, gap, w1 = 880, 196, 12, 520
+        body = (tile(0, 0, w1, h, "violet", "EDUCATION", "MSc Cyber Security & AI", "University of Sheffield", "Awarded with Merit.", deco_cap(w1 - 90, 100, 1.4), 28)
+                + tile(w1 + gap, 0, w - w1 - gap, h, "ocean", "CURRENT ROLE", "AI Security & Compliance", "AdTecher", "Risk assessment, AWS controls and audit evidence with engineering teams.", deco_shield(w - 56, h - 54, .6), 20))
+    return svg(w, h, body, "Highlights: MSc Cyber Security and AI with Merit from the University of Sheffield; AI Security and Compliance at AdTecher", "violet", "ocean")
+
+
 # ------------------------------------------------------------------ footer
 def footer(small):
     w, h = (480, 120) if small else (880, 130)
@@ -385,14 +286,10 @@ def main():
     for small in (False, True):
         sfx = "-sm" if small else ""
         (OUT / f"banner{sfx}.svg").write_text(banner(small))
-        (OUT / f"stats{sfx}.svg").write_text(stats(small))
+        (OUT / f"highlights{sfx}.svg").write_text(highlights(small))
         (OUT / f"whatido{sfx}.svg").write_text(whatido(small))
-        (OUT / f"pipeline{sfx}.svg").write_text(pipeline(small))
         (OUT / f"frameworks{sfx}.svg").write_text(frameworks(small))
         (OUT / f"footer{sfx}.svg").write_text(footer(small))
-        for name, spec in CARDS.items():
-            kw = {("stats_" if k == "stats" else k): v for k, v in spec.items() if k != "url"}
-            (OUT / f"{name}{sfx}.svg").write_text(card(small, **kw))
     print("wrote", len(list(OUT.glob("*.svg"))), "svgs")
 
 
