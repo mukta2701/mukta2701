@@ -1,84 +1,28 @@
-# Hey There! 👋
 
-<img src="assets/o3F.gif" width="1000" alt="GitHub Banner">
+# Mukta Choudhury
 
-## 👩‍💻 **I'm Mukta Choudhury**
+**AI security · Application security · Governance, risk & compliance**
 
-### *Postgraduate Candidate in Cyber Security & Artificial Intelligence | AI Security Engineer | GRC Analyst*
+I work in AI security and compliance at Adtecher, where I assess risks in AI-enabled applications and APIs, review AWS controls, and track remediation and audit evidence with engineering teams.
 
----
+[Portfolio and case studies](https://mukta2701.github.io/) · [LinkedIn](https://www.linkedin.com/in/mukta-choudhury/)
 
-I am currently pursuing my Postgraduate in **Cyber-Security and Artificial Intelligence** at the **University of Sheffield**, after completing my Bachelor’s in **Computer Application** from **Amity University, Kolkata**.
+## Featured project
 
-With a background in **front-end web development**, **financial programming** using **Python**, and proficiency in languages such as **C++**, **Java**, and **Isabelle**, my goal is to transition into a role as a **Cyber Security Analyst**. I aim to leverage my technical expertise to develop and implement robust security frameworks, while contributing to **Open Source projects** to make a positive impact on society.
+### [Privacy Review Agent](https://github.com/mukta2701/privacy-review-agent)
 
----
+**An offline privacy check for code before it ships.** It checks for personal data reaching logs, AI prompts, analytics, and third-party services, and flags hard-coded secrets. It runs at pre-commit or in CI and uses Semgrep to trace how sensitive data moves through code.
 
-### 🔗 **Connect with Me**
+The latest project update documents a **381-case labelled benchmark** and makes accuracy part of the release gate. Structurally confirmed findings can block a commit. Keyword-only matches surface as warnings.
 
-<p align="center">
-    <a href="https://www.linkedin.com/in/mukta-choudhury/" target="_blank">
-        <img src="assets/linkedin.png" width="26" alt="LinkedIn"> <strong>LinkedIn</strong>
-    </a> &nbsp;
-    <a href="https://www.instagram.com/___dusky_bae___/" target="_blank">
-        <img src="assets/instagram.png" width="26" alt="Instagram"> <strong>Instagram</strong>
-    </a> &nbsp;
-    <a href="https://www.facebook.com/mukta.choudhury.33" target="_blank">
-        <img src="assets/facebook.png" width="26" alt="Facebook"> <strong>Facebook</strong>
-    </a> &nbsp;
-    <a href="https://github.com/mukta2701" target="_blank">
-        <img src="assets/github.png" width="26" alt="GitHub"> <strong>GitHub</strong>
-    </a> &nbsp;
-    <a href="https://www.fiverr.com/muktachoudhury/" target="_blank">
-        <img src="assets/fiverr.png" width="26" alt="Fiverr"> <strong>Fiverr</strong>
-    </a>
-</p>
+## More projects
 
----
+| Project | What it does |
+| --- | --- |
+| [Tripwire](https://github.com/mukta2701/tripwire) | A local AI security evaluation project that measures how a mock application responds to security test cases. |
+| [Cybertrend Intelligence](https://github.com/mukta2701/cybertrend-intelligence) | A Python pipeline that combines security news and CVEs, prioritises vulnerabilities using CVSS, EPSS, and CISA KEV, and produces an email digest. |
+| [RFID medical device threat model](https://github.com/mukta2701/rfid-threat-modelling-imd) | A STRIDE case study that maps data flows and proposes safeguards for patient privacy and device safety. |
 
-### 💻 **Languages and Tools**
+## Background
 
-<table align="center">
-<tr>
-<td align="center" width="50%">
-<h4>Front-end Languages</h4>
-<p>
-  <code><img src="assets/Html.png" width="26" alt="HTML"> HTML</code>
-  <code><img src="assets/CSS.png" width="26" alt="CSS"> CSS</code>
-  <code><img src="assets/javascript.png" width="26" alt="JavaScript"> JavaScript</code>
-</p>
-</td>
-<td align="center" width="50%">
-<h4>Back-end Languages</h4>
-<p>
-  <code><img src="assets/Cpp.png" width="26" alt="C++"> C/C++</code>
-  <code><img src="assets/Python.png" width="26" alt="Python"> Python</code>
-  <code><img src="assets/Java.png" width="26" alt="Java"> Java</code>
-</p>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<h4>Frameworks</h4>
-<p>
-  <code><img src="assets/Bootstrap.png" width="26" alt="Bootstrap"> Bootstrap</code>
-</p>
-</td>
-</tr>
-</table>
-
----
-
-### 📊 **GitHub Stats**
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mukta2701&show_icons=true&theme=transparent" alt="Mukta's GitHub Stats" />
-  <br />
-  <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mukta2701&langs_count=8" alt="Top Languages Used" />
-  </a>
-</p>
-
----
-
-### ✨ *Let's connect, collaborate, and build something amazing!*
+**Postgraduate Diploma in Cyber Security and Artificial Intelligence**, University of Sheffield · Merit
