@@ -1,9 +1,0 @@
-{
-  "_comment": "Public numbers only. Sources: privacy-review-agent README (Accuracy section) and cybertrend-intelligence README. Update by hand or via the scheduled workflow.",
-  "tiles": [
-    {"value": "381", "label": "labelled benchmark cases", "source": "privacy-review-agent"},
-    {"value": "100%", "label": "near-miss precision", "source": "privacy-review-agent"},
-    {"value": "460+", "label": "automated tests in CI", "source": "privacy-review-agent"},
-    {"value": "7", "label": "threat feeds + NVD", "source": "cybertrend-intelligence"}
-  ]
-}
