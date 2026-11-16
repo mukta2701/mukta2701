@@ -1,4 +1,3 @@
-
 # Mukta Choudhury
 
 **AI security · Application security · Governance, risk & compliance**
@@ -25,4 +24,4 @@ The latest project update documents a **381-case labelled benchmark** and makes 
 
 ## Background
 
-**Postgraduate Diploma in Cyber Security and Artificial Intelligence**, University of Sheffield · Merit
+**Postgraduate studies in Cyber Security and Artificial Intelligence**, University of Sheffield · Merit
