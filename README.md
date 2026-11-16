@@ -14,14 +14,6 @@ I work in AI security and compliance at Adtecher, where I assess risks in AI-ena
 
 The latest project update documents a **381-case labelled benchmark** and makes accuracy part of the release gate. Structurally confirmed findings can block a commit. Keyword-only matches surface as warnings.
 
-## More projects
-
-| Project | What it does |
-| --- | --- |
-| [Tripwire](https://github.com/mukta2701/tripwire) | A local AI security evaluation project that measures how a mock application responds to security test cases. |
-| [Cybertrend Intelligence](https://github.com/mukta2701/cybertrend-intelligence) | A Python pipeline that combines security news and CVEs, prioritises vulnerabilities using CVSS, EPSS, and CISA KEV, and produces an email digest. |
-| [RFID medical device threat model](https://github.com/mukta2701/rfid-threat-modelling-imd) | A STRIDE case study that maps data flows and proposes safeguards for patient privacy and device safety. |
-
 ## Background
 
 **Postgraduate studies in Cyber Security and Artificial Intelligence**, University of Sheffield · Merit
